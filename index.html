@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Inauguration Ceremony</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="particles" id="particles-js"></div>
+        <div class="content">
+            <h2 class="subtitle">Digital Inauguration Ceremony</h2>
+            <h1 class="title">Welcome</h1>
+            <div class="divider"></div>
+            <h3 class="cm-name">[Chief Minister Name]</h3>
+            <p class="cm-title">Hon'ble Chief Minister, [State]</p>
+            <button id="start-btn" class="glow-btn">
+                <span class="btn-text">Commence Inauguration</span>
+                <span class="btn-icon">→</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Video & Tree Screen -->
+    <div id="tree-screen" class="screen">
+        <div class="video-container">
+            <!-- Ensure video is muted for autoplay policies, but we trigger on click anyway so we can unmute if needed. Leaving muted as default -->
+            <video id="banyan-video" src="banyan tree animation.mp4" muted playsinline></video>
+            
+            <!-- Nodes on branches that appear after video finishes -->
+            <div id="project-nodes" class="hidden">
+                <a href="#" class="node" style="top: 25%; left: 30%;">
+                    <div class="node-inner">
+                        <img src="assets/project_1_1782130366102.png" alt="Smart City Project">
+                        <div class="overlay">
+                            <span>Smart City Infrastructure</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="node" style="top: 35%; left: 70%;">
+                    <div class="node-inner">
+                        <img src="assets/project_2_1782130379843.png" alt="High-Tech School">
+                        <div class="overlay">
+                            <span>Smart Education Initiative</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="node" style="top: 60%; left: 25%;">
+                    <div class="node-inner">
+                        <img src="assets/project_3_1782130392882.png" alt="Solar Power Plant">
+                        <div class="overlay">
+                            <span>Renewable Energy Park</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="node" style="top: 55%; left: 75%;">
+                    <div class="node-inner">
+                        <img src="assets/project_4_1782130407669.png" alt="Modern Hospital">
+                        <div class="overlay">
+                            <span>Digital Health Mission</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load particles.js for premium background effect -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
