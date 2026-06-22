@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-leaf-glow: #D9C47A;
+  --color-tree-highlight: #A67C52;
+  --color-bg-dark: #050505;
+  --color-text-white: #F5F5F5;
+  --color-luxury-gold-dark: #1e1808;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  
+  --animate-pulse-gold: pulse-gold 3s infinite ease-in-out;
+  --animate-leaf-glow-pulse: leaf-glow-pulse 2.5s infinite ease-in-out;
+}
+
+/* Base style overrides to prevent scrolling and maintain 16:9 cinematic presentation */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #050505;
+  color: #F5F5F5;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+
+.glass-panel-heavy {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* Custom Keyframe Animations */
+@keyframes pulse-gold {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.85));
+  }
+}
+
+@keyframes leaf-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(217, 196, 122, 0.35), inset 0 0 8px rgba(217, 196, 122, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(217, 196, 122, 0.75), inset 0 0 15px rgba(217, 196, 122, 0.35);
+  }
+}
+
+/* Cinematic text transitions */
+.text-shine {
+  background: linear-gradient(to right, #F5F5F5 20%, #D4AF37 50%, #F5F5F5 80%);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Custom styles for canvas/procedural tree */
+.tree-canvas-glow {
+  filter: drop-shadow(0 0 8px rgba(166, 124, 82, 0.25));
+}
